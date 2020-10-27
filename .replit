@@ -1,0 +1,2 @@
+language = "bash"
+run = "모의고사.py"
