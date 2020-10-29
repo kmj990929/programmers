@@ -7,15 +7,11 @@ def solution(board, moves):
         for i, element in enumerate(current):
             if element != 0:
                 current[i] = 0
-                box.append(element)
-    print(box)
-    #box check
-    idx = 0
-    while idx == len(box):
-        if box[idx] == box[idx+1]:
-            box = box[:idx]+box[idx+2:]
-            idx -=1
-            answer += 1
-        idx += 1
+                if len(box) >= 1 and box[-1] == element:
+                    box = box[:-1]
+                    answer += 2    
+                else:
+                    box.append(element)
+                break
         
     return answer
